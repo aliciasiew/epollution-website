@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Waste Crisis</title>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+   
+    <button class="music-icon" id="musicButton">🎵</button>
+
+    <audio id="backgroundMusic" loop>
+        <source src="touch-and-sound.mp3" type="audio/mpeg">
+    </audio>
+	
+    <style>
+        /* Splash screen style */
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("pollution.jpg") no-repeat center center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .splash-screen img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+		.title-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 1);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            z-index: 9998;
+            text-align: center;
+        }
+
+        .title-screen h1 {
+            font-size: 3rem;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+		
+		
+		/* Ensure full height and scrolling */
+        html, body {
+            height: 100%; /* Set to 100% to allow scrolling */
+            margin: 0;
+            padding: 0;
+            background-color: #0d0d0d;
+            color: white;
+        }
+
+        header {
+            font-family: Helvetica;
+            font-size: 40px;
+			background-color: #0d0d0d;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            display: none;
+            width: 100%; /* Full width of the page */
+            height: 300px; /* Adjust height as needed */
+            background-image: url('E-Waste.webp'); /* Path to your image */
+            background-size: cover; /* Cover the entire header area */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent tiling */                
+        }
+		
+		body {
+            font-family: "Times New Roman";
+            margin: 0;
+            padding: 0;
+            color: #2F4F4F;
+            text-align: justify;
+        }
+
+		.container {
+            display: flex; /* Use Flexbox for layout */
+            flex-wrap: wrap; /* Allow wrapping if needed */
+            justify-content: space-between; /* Space between columns */
+            gap: 20px; /* Space between columns */
+            margin: 20px auto; /* Center the container */
+            max-width: 1200px; /* Overall container width */
+        }
+
+		.column {
+            flex: 1; /* Flexible width to distribute evenly */
+            max-width: 40%; /* Prevent columns from being too wide */
+            background-color: #808080; /* Gray background */
+            color: white; /* White text */
+            padding: 20px;
+            border-radius: 5px;
+            box-sizing: border-box; /* Include padding in width/height */
+            text-align: justify; 
+        }  
+		/* For the new row with a single column */
+		.single-column {
+		max-width: 100%; /* Make the column span the entire width */
+		flex: 1 0 100%; /* Ensure it takes full width in the row */
+		}		
+
+		.info-box {
+            padding: 10px; /* Space inside the box */
+            background-color:#87CEEB; 
+            color: black; 
+            text-align: center; 
+            border-radius: 5px; /* Slightly rounded corners */
+            width: 200px; /* Fixed width */
+            margin: 20px auto; /* Center the box horizontally */
+        }
+
+		.info-box a {
+            color: black; 
+            text-decoration: none; /* Remove underline */
+        }
+
+        .info-box a:hover {
+            text-decoration: underline; /* Add underline on hover */
+        }
+
+		@media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack columns vertically on small screens */
+            }
+
+            .column {
+                max-width: 100%; /* Make each column take full width on small screens */
+            }
+			}
+			
+		@keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+		
+	.quiz-container {
+      background: #808080;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      text-align: center;
+	  color: white;
+    }
+	
+    }
+    .question {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+    .options {
+      margin-bottom: 15px;
+    }
+    
+    .result {
+      font-size: 18px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    .final-result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+        }
+    </style>
+</head>
+
+    <header>
+        <h1>Tech Waste: The Silent Pollutant of the Digital Age</h1>
+    </header>
+
+<body>
+   
+    <div class="splash-screen">
+        <img src="pollution.jpg" alt="ewaste pollution">
+    </div>
+    <div class="title-screen">
+        <h1>"E-Waste Crisis: The Toxic Legacy of Technology"</h1>
+    </div>
+    
+	<div class="container">
+        <div class="column">
+		<h2 style="text-align:center;font-size:25px">What is E-Waste?</h2>
+            <p>Electronic waste, also known as end-of-life (EOL) electronics or e-waste, refers to discarded, recycled or refurbished electrical and electronic products.Common items in e-waste streams include computers, mobile phones, large household appliances, and medical equipment.
+			<br><br><img src="E-waste example.png" alt="e-waste example" width=300 height=350></p>
+			<p>Typical electronic waste devices include but are not limited to:</p>
+			<p>1.Communication and information technology devices such as smartphones, cell phones, desktop computers, laptops, hard drives, and circuit boards.
+			<br>2.Small appliances such as toasters, microwaves, vacuums, hair dryers, power tools, fans, and heaters.
+			<br>3.Large appliances such as refrigerators, dishwasher, washing machine, refrigerators, freezers, and air conditioners.
+			<br>4.Home entertainment devices such as PCs, DVDs, VCRs, Blu-ray players, video game systems, televisions, and radios.
+			<br>5.Electronic utilities such as lamps, light bulbs, batteries, heating pads and smartwatches.
+			<br>6.Office and medical equipment such as printers, IT servers, network hardware, and audio & video equipment.</p>
+		</div>
+
+        <div class="column">
+            <h2 style="text-align:center;font-size:25px">Causes of E-Waste</h2>
+			<p>The rapid expansion of technology has led to an increase in the production of electronic devices, resulting in a significant rise in electronic waste, or e-waste. One of the primary causes of e-waste is the growing demand for electronic products.</p>
+            <p>When electrical appliances break down, many consumers choose to replace them instead of repairing them, especially if buying a new one is more cost-effective than fixing the old one. Additionally, the yearly release of new gadgets encourages people to upgrade their devices more frequently, rendering older models obsolete and often discarded. This discarded electronic equipment is what we refer to as e-waste.</p>
+			<p>There are two key factors that make e-waste an escalating environmental issue:</p>
+			<p>1.Toxic Chemicals</p><img src="toxic.png" alt="toxic chemicals" width=380 height=200>
+			<br><br>2.Slow Decomposition</p><img src="decompose.png" alt="decompose" width=380 height=300>
+        </div>
+
+        <div class="column">
+            <h2 style="text-align:center;font-size:25px">Environmental Impact of E-Waste</h2>
+			<p>The rapid growth of technology has led to an increase in electronic waste (e-waste), which contains harmful chemicals. These chemicals make e-waste both costly and challenging to process. This issue has become an increasing concern in global. When electronic waste is disposed of improperly in landfills, the toxic substances it contains begin to leach into the soil, air, and water, creating significant risks for human health, wildlife, plants, and the overall environment.</p>
+		
+		<div class="info-box">
+        <a href="https://www.who.int/news-room/fact-sheets/detail/electronic-waste-(e-waste)" target="_blank">Know More About E-Waste</a>
+            </div>
+        <h3>E-Waste Effects on Air</h3>
+		<p>Air pollution is a major concern when electronic waste is disposed of by informal methods such as burning, dismantling, or shredding. These processes release dangerous dust particles and toxins, including dioxins, into the air. Exposure to these harmful substances can damage the respiratory system, leading to chronic diseases and even cancer. The impact of air pollution extends beyond humans; it also affects plants and animals, disrupting ecosystems and biodiversity.</p>
+        <h3>E-Waste Effects on Soil</h3>
+        <p>When e-waste is improperly discarded in landfills or illegal dumpsites, harmful substances such as flame retardants and heavy metals can seep into the soil. This contamination can also reach the groundwater, affecting water supplies. Future crops planted in contaminated soil are at risk of absorbing toxic elements, making them unsafe for consumption. In addition to posing health risks, soil contamination diminishes the fertility and productivity of agricultural land, affecting food safety and farming practices.</p>
+        <h3>E-Waste Effects on Water</h3>
+        <p>Heavy metals from e-waste that enter groundwater eventually find their way into rivers, lakes, and other bodies of water. This contamination leads to acidification and toxicity in the water, making it hazardous for both aquatic life and humans. The acidification can kill freshwater and marine organisms, severely disrupt biodiversity, and harm entire ecosystems. Furthermore, communities located near contaminated water sources may suffer from unsafe drinking water and diminished livelihoods due to damaged aquatic resources.</p>
+    </div>
+	</div>
+	
+<div class="container">
+        <div class="column single-column">
+        <h2 style="text-align:center;font-size:25px">Global Hotspots for E-Waste Dumping</h2>
+		<img src="dumping.png" alt="ewaste dumping" width=560 height=315>
+		 
+    <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/J6CL6xtIP58" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>	 
+    </iframe>
+	<p>Electronic waste growing at record levels, U.N. report finds</p>
+	</div>
+    </div>
+
+<div class="container">
+	<div class="column">
+		<img src="GEM 2024.png" alt="trend" width=340 height=300>
+		<p>Global E-Waste Trend for 2010-2030</p>  
+	</div>
+
+		<div class="column">
+		<img src="GEM 2024 - Amount of E-waste Generated and Collected.png" alt="waste generated and collected" width=340 height=300>
+		<p>Global E-Waste Generated and Collected</p></div>
+		
+		<div class="column">
+		<img src="GEM 2024 - Executive Summary 2.png" alt="summary 2022" width=340 height=300>
+		<p>Global E-Waste Characterics</p></div>		
+	</div>
+
+<div class="container">
+        <div class="column single-column">
+        <h2 style="text-align:center;font-size:25px">A Challenge for Sustainable Development</h2>
+		<img src="challenge.jpg" alt="challenge" width=560 height=400>
+	
+	<iframe 
+    width="560" 
+    height="400" 
+    src="https://www.youtube.com/embed/AOAQSRBxQ4E" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+</iframe>
+</div>
+</div>
+
+
+<div class="container" style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+    <!-- Image Section -->
+    <div class="image-section">
+        <img src="Reduce EWaste.png" alt="reduce e-waste" width="600" height="1100" style="display: block;">
+    </div>
+    
+    <!-- Text Section -->
+    <div class="text-section" style="max-width: 400px; colour:white;">
+        <h2 style="font-size:25px; margin-bottom: 10px;color: white;">
+            Strategies for Minimizing E-Waste: A Sustainable Approach
+        </h2>
+        <p style="font-size:16px; line-height:1.6; color: white;">
+           Recycling programs are crucial for managing e-waste. Setting up convenient drop-off centers and offering incentives, like discounts or rewards, can encourage proper disposal. Formal recycling systems are also essential to safely recover valuable materials and prevent environmental damage.
+		<br><br>
+		Educating the public is key to reducing e-waste. Awareness campaigns can teach people about the dangers of improper disposal and the importance of recycling. Communities and schools can also host workshops to encourage responsible habits, like maintaining devices to extend their lifespan.
+		<br><br>
+		Collaboration between governments, businesses, and communities is essential. Partnerships can fund recycling programs, improve infrastructure, and promote awareness. Local e-waste collection drives can also engage communities and make a big impact.
+        </p>
+        <div class="info-box">
+            <a href="https://www.unep.org/ietc/news/story/sustainable-future-e-waste" target="_blank" 
+               style= "background-color:#87CEEB; color: black;">Learn more about the Sustainable Future of E-Waste</a>
+        </div>
+<br><br><br>	
+	<div class="quiz-container">
+    <h2>E-Waste Quiz</h2>
+
+    <div class="question" id="question">Loading question...</div>
+    <div class="options">
+      <button onclick="checkAnswer(1)" id="option1">Option 1</button>
+      <button onclick="checkAnswer(2)" id="option2">Option 2</button>
+      <button onclick="checkAnswer(3)" id="option3">Option 3</button>
+    </div>
+    <div class="result" id="result"></div>
+    <div class="final-result" id="finalResult"></div>
+  </div>
+    </div>
+</div>	
+
+
+
+    <script>
+        // Display Splash Screen for 1 second
+        setTimeout(() => {
+            document.querySelector('.splash-screen').style.display = 'none'; // Hide splash screen
+            document.querySelector('.title-screen').style.display = 'flex'; // Show title screen
+
+            // Display Pop-Up Title for 2 seconds
+            setTimeout(() => {
+                document.querySelector('.title-screen').style.display = 'none'; // Hide title screen
+                document.querySelector('header').style.display = 'block'; // Show homepage header
+                document.querySelector('.container').style.display = 'flex'; // Show homepage content
+            }, 3000); // 2 seconds delay for title screen
+        }, 2000); // 1 second delay for splash screen
+    </script>
+
+<script>
+        const musicButton = document.getElementById('musicButton');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        let isPlaying = false;
+
+        // Toggle play/pause on click
+        musicButton.addEventListener('click', () => {
+            if (isPlaying) {
+                backgroundMusic.pause();
+                musicButton.textContent = '🎵'; // Change icon to default
+            } else {
+                backgroundMusic.play();
+                musicButton.textContent = '🔊'; // Change icon to indicate playing
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
+
+<script>
+    const questions = [
+      {
+        question: "What is e-waste?",
+        options: ["Electronic waste", "Plastic waste", "Organic waste"],
+        correct: 1,
+      },
+      {
+        question: "How should old electronics be disposed of?",
+        options: ["Threw in the trash", "Recycled properly", "Burned in open landfills"],
+        correct: 2,
+      },
+      {
+        question: "What is one major impact of e-waste on the environment?",
+        options: ["Soil contamination", "Air purification", "Better farming growth"],
+        correct: 1,
+      },
+      {
+        question: "Which of these is considered e-waste?",
+        options: ["Mobile phones", "Plastic bottles", "Food waste"],
+        correct: 1,
+      },
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    function displayQuestion() {
+      const question = questions[currentQuestionIndex];
+      document.getElementById('question').innerText = question.question;
+      document.getElementById('option1').innerText = question.options[0];
+      document.getElementById('option2').innerText = question.options[1];
+      document.getElementById('option3').innerText = question.options[2];
+      document.getElementById('result').innerText = `Score: ${score}`;
+      document.getElementById('finalResult').innerText = "";
+    }
+
+    function checkAnswer(option) {
+      const correctAnswer = questions[currentQuestionIndex].correct;
+      
+      if (option === correctAnswer) {
+        score += 1;
+        document.getElementById('result').innerText = "Correct! " + `Score: ${score}`;
+      } else {
+        document.getElementById('result').innerText = "Wrong! " + `Score: ${score}`;
+      }
+      
+      currentQuestionIndex++;
+
+      if (currentQuestionIndex < questions.length) {
+        setTimeout(displayQuestion, 1000);
+      } else {
+        setTimeout(showFinalResult, 1000);
+      }
+    }
+
+    function showFinalResult() {
+      document.getElementById('question').innerText = "Quiz Over!";
+      let resultMessage = `You scored ${score} out of ${questions.length}.`;
+      if (score === questions.length) {
+        resultMessage += " Excellent! You know a lot about e-waste!";
+      } else if (score > questions.length / 2) {
+        resultMessage += " Good job! You have a solid understanding.";
+      } else {
+        resultMessage += " Try to learn more about e-waste management.";
+      }
+      document.getElementById('finalResult').innerText = resultMessage;
+      document.querySelector('.options').style.display = 'none'; // Hide options after quiz is over
+    }
+
+    // Initialize the quiz
+    displayQuestion();
+  </script>
+
+<footer style="background-color: #0d0d0d; color: white; text-align: center; padding: 15px; margin-top: 20px;">
+    <p style="margin: 0; font-size: 14px;">For Education Purpose.</p>
+    <p style="margin: 5px 0 0; font-size: 14px;">Follow us on 
+        <a href="https://www.facebook.com" target="_blank" style="color: #87CEEB; text-decoration: none;">Facebook</a>, 
+        <a href="https://www.twitter.com" target="_blank" style="color: #87CEEB; text-decoration: none;">Twitter</a>, and 
+        <a href="https://www.instagram.com" target="_blank" style="color: #87CEEB; text-decoration: none;">Instagram</a>.
+    </p>
+</footer>
+	
+</body>
+</html>
